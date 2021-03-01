@@ -85,12 +85,11 @@ function openGeneralMenu(value)
                 elseif tonumber(data.value) > 0 and tonumber(data.value) < 241 then 
                     menu.close()
                     menu2.close()
-                    local sellprice = 25
                     exports['mythic_notify']:DoHudText('inform', '[INFO] Moonshine Verkopen...')
                     RequestAnimDict("timetable@jimmy@doorknock@")
                     PlayAnimation(PlayerPedId(), "timetable@jimmy@doorknock@", "knockdoor_idle")
                     Citizen.Wait(1500)
-                    TriggerServerEvent('bamboozle-selling:SellMoonshine', sellprice, data.value)
+                    TriggerServerEvent('bamboozle-selling:SellMoonshine', data.value)
 					
 					Wait(2500)
 					

@@ -55,8 +55,18 @@ RegisterServerEvent('bamboozle-production:GiveMoonshine')
 AddEventHandler('bamboozle-production:GiveMoonshine', function()
 	local src = source
 	local xPlayer = ESX.GetPlayerFromId(src)
+	local ped = GetPlayerPed(src)
+    local playerCoords = GetEntityCoords(ped)
 
-	xPlayer.addInventoryItem('moonshine', 24)
+	if Config.onesync then 
+		if #(playerCoords - vec3(-36.83, 3030.73, 41.02)) <= 20.0 then
+			xPlayer.addInventoryItem('moonshine', 24)
+		else  
+			print("Cheater: " .. GetPlayerName(src))
+		end
+	else
+		xPlayer.addInventoryItem('moonshine', 24)
+	end
 end)
 
 RegisterServerEvent('bamboozle-production:water')
