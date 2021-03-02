@@ -1,1 +1,4 @@
 Config = {}
+
+
+Config.onesync = true

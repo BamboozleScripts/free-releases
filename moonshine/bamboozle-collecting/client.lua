@@ -83,7 +83,7 @@ Citizen.CreateThread(function()
 								{label = ("Moonshine Packet"), value = "buy_items"},
 						}}, function(data, menu)
 							if data.current.value == "buy_ketel" then
-								TriggerServerEvent("bamboozle-collecting:ketel", 5000, action)
+								TriggerServerEvent("bamboozle-collecting:ketel", action)
 											
 								ESX.UI.Menu.CloseAll()
 												
@@ -91,7 +91,7 @@ Citizen.CreateThread(function()
 								
 								start = true
 							elseif data.current.value == "buy_items" then
-								TriggerServerEvent("bamboozle-collecting:buyitems", 1500, action)
+								TriggerServerEvent("bamboozle-collecting:buyitems", action)
 								
 								moonshinecar = true
 											

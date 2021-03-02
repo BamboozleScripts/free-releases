@@ -8,7 +8,8 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 
 RegisterServerEvent('bamboozle-selling:SellMoonshine')
-AddEventHandler('bamboozle-selling:SellMoonshine', function(sellprice, value)
+AddEventHandler('bamboozle-selling:SellMoonshine', function(value)
+	local sellprice = 25 --- change sell price here
 	local _source = source 
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	local moonshine = xPlayer.getInventoryItem('moonshine').count
